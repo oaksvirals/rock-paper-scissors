@@ -64,6 +64,47 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection))
+// A 5 round game of rock, paper, scissors
+let totalRounds = 5;
+
+function game() {
+
+    let playerScore = 0;
+    let compScore = 0;
+    let noWinner = 0;
+
+    for (let i = 0; i < totalRounds; i++) {
+        const playerSelection = getPlayerChoice();
+        const computerSelection = getComputerChoice();
+        const roundResult = playRound(playerSelection, computerSelection);
+
+        switch (roundResult) {
+            case 'You Win! Rock beats Scissors.':
+            case 'You Win! Paper beats Rock.':
+            case 'You Win! Scissors beats Paper.':
+                 playerScore = playerScore + 1;
+                 break;
+            case 'You Lose! Paper beats Rock.':
+            case 'You Lose! Scissors beats Paper.':
+            case 'You Lose! Rock beats Scissors.':
+                 compScore = compScore + 1;
+                 break;
+            default:
+                noWinner = noWinner + 1;
+                break;
+        };
+
+        console.log(playerScore,'player score')
+        console.log(compScore, 'comp score')
+    }
+
+    if (playerScore > compScore) {
+        return 'Player is the Winner!';
+    } else if (compScore > playerScore) {
+        return 'Computer is the Winner!';
+    } else {
+        return `It's a draw!`
+    }
+}
+
+console.log(game())
