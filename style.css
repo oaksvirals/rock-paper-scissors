@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.gameContainer {
+    border: 2px solid red;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Game Details: Above the Fold */
+.gameDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.gameDetails h1 {
+    font-size: 50px;
+}
+
+.gameDetails p {
+    font-size: 18px;
+}
+
+.gameBG {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
