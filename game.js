@@ -17,94 +17,160 @@
 
 
 // Computer picks their choice
+let computerSelection = '';
+
 function getComputerChoice() {
     let rng = Math.random() * 10
 
-    return (rng <= 3) ? 'rock'
-    : (rng > 6) ? 'scissors'
-    : 'paper'
-}
+    return (rng <= 3) ? computerSelection = 'rock'
+    : (rng > 6) ? computerSelection = 'scissors'
+    : computerSelection = 'paper'
+};
 
-// Player picks their choice
-function getPlayerChoice() {
-    let select = prompt('Please type in your selection of Rock, Paper, or Scissors');
-    let lowResponse = select.toLowerCase()
-    return lowResponse
-}
+getComputerChoice();
 
 // Playing a single round of rock, paper, scissors
+const roundCount = document.querySelector('.roundResults h2');
+const roundResults = document.querySelector('.roundResults p');
+const playersPoints = document.querySelector('.playerScore');
+const computersPoints = document.querySelector('.computerScore');
+
+let playerScore = 0;
+let computerScore = 0;
+let numberRound = 1;
+let playerScoreString = '0';
+let ComputerScoreString = '0';
+
 function playRound(playerSelection, computerSelection) {
 
+    getComputerChoice();
+    console.log(computerSelection, ':Computer Selection')
+    
     // player has rock
     if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        playerScore++;
+        playerScoreString = playerScore;
+        numberRound++;
         return 'You Win! Rock beats Scissors.';
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        computerScore++;
+        ComputerScoreString = computerScore;
+        numberRound++;
         return 'You Lose! Paper beats Rock.';
     } else if (playerSelection === 'rock' && computerSelection === 'rock') {
+        numberRound++;
         return 'Tie! Try again.';
     }
 
     // player has paper
     if (playerSelection === 'paper' && computerSelection === 'rock') {
+        playerScore++;
+        playerScoreString = playerScore;
+        numberRound++;
         return 'You Win! Paper beats Rock.';
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        computerScore++;
+        ComputerScoreString = computerScore;
+        numberRound++;
         return 'You Lose! Scissors beats Paper.';
     } else if (playerSelection ==='paper' && computerSelection === 'paper') {
+        numberRound++;
         return 'Tie! Try again.';
     }
 
     // player has scissors
     if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        playerScore++;
+        playerScoreString = playerScore;
+        numberRound++;
         return 'You Win! Scissors beats Paper.';
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        computerScore++;
+        ComputerScoreString = computerScore;
+        numberRound++;
         return 'You Lose! Rock beats Scissors.';
     } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+        numberRound++;
         return 'Tie! Try again.';
     }
 
-}
+};
 
-// A 5 round game of rock, paper, scissors
-let totalRounds = 5;
+// Action Buttons
+const buttonArea = document.querySelector('.buttonArea');
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorsButton =document.querySelector('#scissors');
+    // reset button
+const resetButton = document.createElement('button');
+resetButton.textContent = 'PLAY AGAIN';
 
-function game() {
+resetButton.addEventListener('click', () => {
+    playerScore = 0;
+    computerScore = 0;
+    numberRound = 1;
+    playerScoreString = playerScore;
+    ComputerScoreString = computerScore;
+    playersPoints.textContent = playerScoreString;
+    computersPoints.textContent = ComputerScoreString;
+    roundCount.textContent = 'Round: 0 (Play Again!)';
+    roundResults.textContent = '...';
+    computerSelection = getComputerChoice();
+    resetButton.remove();
+});
 
-    let playerScore = 0;
-    let compScore = 0;
-    let noWinner = 0;
+// Score Limit
+let scoreLimit = 5;
 
-    for (let i = 0; i < totalRounds; i++) {
-        const playerSelection = getPlayerChoice();
-        const computerSelection = getComputerChoice();
-        const roundResult = playRound(playerSelection, computerSelection);
+// Announcing Winner
+function scoreKeeper() {
+    if (playerScore === scoreLimit) {
+        playersPoints.textContent = 'WINNER!';
+        computersPoints.textContent = 'LOSER...';
+        buttonArea.appendChild(resetButton);
+    } else if (computerScore === scoreLimit) {
+        playersPoints.textContent = 'LOSER...';
+        computersPoints.textContent = 'WINNER!';
+        buttonArea.appendChild(resetButton);
+    };
+};
 
-        switch (roundResult) {
-            case 'You Win! Rock beats Scissors.':
-            case 'You Win! Paper beats Rock.':
-            case 'You Win! Scissors beats Paper.':
-                 playerScore = playerScore + 1;
-                 break;
-            case 'You Lose! Paper beats Rock.':
-            case 'You Lose! Scissors beats Paper.':
-            case 'You Lose! Rock beats Scissors.':
-                 compScore = compScore + 1;
-                 break;
-            default:
-                noWinner = noWinner + 1;
-                break;
+// Action Button Events
+rockButton.addEventListener('click', () => {
+    if (playerScore !== scoreLimit && computerScore !== scoreLimit) {
+        roundCount.textContent = 'Round: ' + numberRound;
+        roundResults.textContent = playRound('rock', computerSelection);
+        playersPoints.textContent = playerScoreString;
+        computersPoints.textContent = ComputerScoreString;
+    };
+        
+    if (playerScore + computerScore >= scoreLimit) {
+            scoreKeeper();
+    };
+});
+
+paperButton.addEventListener('click', () => {
+    if (playerScore !== scoreLimit && computerScore !== scoreLimit) {
+        roundCount.textContent = 'Round: ' + numberRound;
+        roundResults.textContent = playRound('paper', computerSelection);
+        playersPoints.textContent = playerScoreString;
+        computersPoints.textContent = ComputerScoreString;
         };
+        
+    if (playerScore + computerScore >= scoreLimit) {
+            scoreKeeper();
+        };
+});
 
-        console.log(playerScore,'player score')
-        console.log(compScore, 'comp score')
-    }
-
-    if (playerScore > compScore) {
-        return 'Player is the Winner!';
-    } else if (compScore > playerScore) {
-        return 'Computer is the Winner!';
-    } else {
-        return `It's a draw!`
-    }
-}
-
-console.log(game())
+scissorsButton.addEventListener('click', () => {
+    if (playerScore !== scoreLimit && computerScore !== scoreLimit) {
+        roundCount.textContent = 'Round: ' + numberRound;
+        roundResults.textContent = playRound('scissors', computerSelection);
+        playersPoints.textContent = playerScoreString;
+        computersPoints.textContent = ComputerScoreString;
+    };
+    
+    if (playerScore + computerScore >= scoreLimit) {
+        scoreKeeper();
+    };
+});
