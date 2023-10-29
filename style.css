@@ -9,20 +9,21 @@ body {
 }
 
 .gameContainer {
-    border: 2px solid red;
     width: 100vw;
     height: 100vh;
 }
 
 /* Game Details: Above the Fold */
 .gameDetails {
+    border: 2px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 25px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    padding: 25px;
+    /* margin-top: 25px;
+    margin-bottom: 25px; */
 }
 
 .gameDetails h1 {
@@ -33,8 +34,28 @@ body {
     font-size: 18px;
 }
 
+/* Game Area */
 .gameBG {
+    border: 2px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 25px;
+}
+
+.test {
+    border: 2px solid red;
+    position: relative;
+    padding: 25px;
+}
+
+.wizLeft {
+    position: absolute;
+    bottom: 100px;
+}
+
+.wizRight {
+    position: absolute;
+    bottom: 100px;
+    right: 30px;
 }
