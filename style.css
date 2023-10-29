@@ -87,10 +87,26 @@ body {
     bottom: 195px;
 }
 
+.wizLeftSpell {
+    border: 2px solid red;
+    position: absolute;
+    padding: 25px;
+    left: 200px;
+    bottom: 275px;
+}
+
 .wizRight {
     position: absolute;
     bottom: 195px;
     right: 30px;
+}
+
+.wizRightSpell {
+    border: 2px solid red;
+    position: absolute;
+    padding: 25px;
+    right: 250px;
+    bottom: 275px;
 }
 
 /* Msg Box */

@@ -34,6 +34,8 @@ const roundCount = document.querySelector('.msgBox h4');
 const roundResults = document.querySelector('.msgBox p');
 const wizLeft = document.querySelector('.wizLeft');
 const wizRight = document.querySelector('.wizRight');
+const wizLeftSpell = document.createElement('img');
+const wizRightSpell = document.createElement('img');
 
 let playerScore = 0;
 let computerScore = 0;
