@@ -77,7 +77,7 @@ function playRound(playerSelection, computerSelection) {
         let rng = Math.random() * 10;
 
         return (rng < 1) ? winText = 'Tangled! Nature\'s Grasp Ensnares!'
-        : (rng < 2) ? winText = 'Tangled! Vines Constrict, Foe Restrained!'
+        : (rng < 2) ? winText = 'Tangled! Vines Tighten, Foe Restrained!'
         : (rng < 3) ? winText = 'Tangled! Entangled in Earthen Bonds!'
         : (rng < 4) ? winText = 'Tangled! Green Wrath Entwines!'
         : (rng < 5) ? winText = 'Tangled! Leafy Lockdown Achieved!'
@@ -93,15 +93,15 @@ function playRound(playerSelection, computerSelection) {
     function rockLoss() {
         let rng = Math.random() * 10;
 
-        return (rng < 1) ? loseText = 'Ouch! Flame Fizzles, Foe Strikes Back!'
+        return (rng < 1) ? loseText = 'Ouch! Low Flame, Foe Strikes Back!'
         : (rng < 2) ? loseText = 'Ouch! Ember\'s Miss, Enemy\'s Hit!'
         : (rng < 3) ? loseText = 'Ouch! Fire Fails, Pain Prevails!'
         : (rng < 4) ? loseText = 'Ouch! Blaze Backfire, Damage Taken!'
-        : (rng < 5) ? loseText = 'Ouch! Scorch Skips, Suffer the Consequence!'
+        : (rng < 5) ? loseText = 'Ouch! Scorch Miss, Consequence!'
         : (rng < 6) ? loseText = 'Ouch! Fiery Fault, Struck in Return!'
         : (rng < 7) ? loseText = 'Ouch! Burn Missed, Brutally Bested!'
         : (rng < 8) ? loseText = 'Ouch! Ashes to Ashes, You Fall!'
-        : (rng < 9) ? loseText = 'Ouch! Flare Flounders, Foe Retaliates!'
+        : (rng < 9) ? loseText = 'Ouch! Flare Sizzles, Foe Retaliates!'
         :  loseText = 'Ouch! That hurts...'
     };
     function paperLoss() {
@@ -112,8 +112,8 @@ function playRound(playerSelection, computerSelection) {
         : (rng < 3) ? loseText = 'Soaked! Stream Strays, Strike Endured!'
         : (rng < 4) ? loseText = 'Soaked! Missed Torrent, Take the Blow!'
         : (rng < 5) ? loseText = 'Soaked! Flood Falters, Foe\'s Revenge!'
-        : (rng < 6) ? loseText = 'Soaked! Ripple Rejected, Rival Retaliates!'
-        : (rng < 7) ? loseText = 'Soaked! Aqua Aimless, Adversary Attacks!'
+        : (rng < 6) ? loseText = 'Soaked! Bad Ripple, Rival Retaliates!'
+        : (rng < 7) ? loseText = 'Soaked! Aqua Aimless, Enemy Attacks!'
         : (rng < 8) ? loseText = 'Soaked! Deluge Dodged, Damage Dealt!'
         : (rng < 9) ? loseText = 'Soaked! Tide Turns, Enemy Strikes!'
         :  loseText = 'Soaked! Surge Stumbles, Suffer the Blow!'
@@ -121,12 +121,12 @@ function playRound(playerSelection, computerSelection) {
     function scissorsLoss() {
         let rng = Math.random() * 10;
 
-        return (rng < 1) ? loseText = 'Stung! Vines Veer, Victim to Vengeance!'
+        return (rng < 1) ? loseText = 'Stung! Vines Veer, Enemy Vengeance!'
         : (rng < 2) ? loseText = 'Stung! Foliage Fails, Foe Flourishes!'
         : (rng < 3) ? loseText = 'Stung! Entangle Error, Enemy Exploits!'
-        : (rng < 4) ? loseText = 'Stung! Botanical Blunder, Battered in Return!'
+        : (rng < 4) ? loseText = 'Stung! Vines Blunder, Battered in Return!'
         : (rng < 5) ? loseText = 'Stung! Greenery Gaffe, Gets Grappled!'
-        : (rng < 6) ? loseText = 'Stung! Thicket Thrashed, Thrown into Turmoil!'
+        : (rng < 6) ? loseText = 'Stung! Thicket Down, Thrown into Turmoil!'
         : (rng < 7) ? loseText = 'Stung! Nature\'s Net Misses, Nemesis Strikes!'
         : (rng < 8) ? loseText = 'Stung! Leafy Lapse, Lashed by Foe!'
         : (rng < 9) ? loseText = 'Stung! Sprout Slip, Stricken by Adversary!"'
@@ -225,13 +225,12 @@ function showHeart(heart) {
 };
 
 // Action Buttons
-const buttonArea = document.querySelector('.buttonArea');
+const resetArea = document.querySelector('#resetBox')
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton =document.querySelector('#scissors');
     // reset button
 const resetButton = document.createElement('button');
-resetButton.textContent = 'PLAY AGAIN';
 
 resetButton.addEventListener('click', () => {
     playerScore = 0;
@@ -261,9 +260,11 @@ let scoreLimit = 5;
 // Announcing Winner
 function scoreKeeper() {
     if (playerScore === scoreLimit) {
-        buttonArea.appendChild(resetButton);
+        resetButton.textContent = 'Enemy Slain! (Play Again)';
+        resetArea.appendChild(resetButton);
     } else if (computerScore === scoreLimit) {
-        buttonArea.appendChild(resetButton);
+        resetButton.textContent = 'You Died.... (Try Again)';
+        resetArea.appendChild(resetButton);
     };
 };
 

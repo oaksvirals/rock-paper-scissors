@@ -45,7 +45,33 @@ body {
 
 .arenaBG {
     position: relative;
-    /* padding: 25px; */
+    text-wrap: wrap;
+}
+
+#resetBox {
+    position: absolute;
+    left: 175px;
+    bottom: 350px;
+    padding: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#resetBox button {
+    background: red;
+    padding: 25px;
+    color: white;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 600;
+    border: 2px solid red;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#resetBox button:hover {
+    transform: scale(0.95);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 .msgBox {
@@ -58,12 +84,12 @@ body {
 
 .wizLeft {
     position: absolute;
-    bottom: 175px;
+    bottom: 195px;
 }
 
 .wizRight {
     position: absolute;
-    bottom: 175px;
+    bottom: 195px;
     right: 30px;
 }
 
