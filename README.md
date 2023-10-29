@@ -1,14 +1,12 @@
 # rock-paper-scissors
 
-Currently: A JavaScript Console Game
+This is a wizardy twist on the classic game of rock, paper, scissors.
 
-Running this game in your browser with the dev tools console open allows you to play a 5 round game of rock, paper, scissors.
+The player selects from three different spells to combat the enemy wizard. Game is complete with basic animations.
 
-Initial version of this game required me learning:
-- multiple functions
-- tenary operators
-- Math.random()
-- prompted for user input
-- if, else if, else statements
-- for loops
-- score keeping with a switch statement
+In this project I learned:
+- DOM manipulation
+- more about using functions
+- query selectors
+- making acute changes to specific parts of the html
+- game logic
