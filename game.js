@@ -32,6 +32,8 @@ getComputerChoice();
 // Playing a single round of rock, paper, scissors
 const roundCount = document.querySelector('.msgBox h4');
 const roundResults = document.querySelector('.msgBox p');
+const wizLeft = document.querySelector('.wizLeft');
+const wizRight = document.querySelector('.wizRight');
 
 let playerScore = 0;
 let computerScore = 0;
@@ -40,6 +42,25 @@ let numberRound = 1;
 function playRound(playerSelection, computerSelection) {
 
     getComputerChoice();
+
+    // change wizard stance
+    function changeLeftWizStance() {
+        let rng = Math.random() * 10;
+
+        return rng < 3 ? wizLeft.src = './images/left-wiz-two.png'
+        : rng > 6 ? wizLeft.src = './images/left-wiz-three.png'
+        : wizLeft.src = './images/left-wiz-one.png'
+    };
+    changeLeftWizStance();
+
+    function changeRightWizStance() {
+        let rng = Math.random() * 10;
+
+        return rng < 3 ? wizRight.src = './images/right-wiz-two.png'
+        : rng > 6 ? wizRight.src = './images/right-wiz-three.png'
+        : wizRight.src = './images/right-wiz-one.png'
+    };
+    changeRightWizStance();
 
     // Win and Loss Phrases
         // wins
