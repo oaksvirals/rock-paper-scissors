@@ -52,17 +52,26 @@ body {
     padding: 25px;
 }
 
+.msgBox {
+    border: 5px solid gray;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 25px;
+}
+
 .wizLeft {
     position: absolute;
-    bottom: 100px;
+    bottom: 175px;
 }
 
 .wizRight {
     position: absolute;
-    bottom: 100px;
+    bottom: 175px;
     right: 30px;
 }
 
+/* Character HP */
 .lifeContainer {
     border: 2px solid green;
     display: flex;
@@ -76,4 +85,62 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 375px;
+}
+
+/* Ability Buttons */
+#rock {
+    background-color: white;
+    border: 0;
+}
+
+#rock img {
+    border-radius: 8px;
+    transform: scale(1);
+    transition: 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#rock img:hover {
+    background-color: #FF8000;
+    transform: scale(0.95);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#paper {
+    background-color: white;
+    border: 0;
+}
+
+#paper img {
+    border-radius: 8px;
+    transform: scale(1);
+    transition: 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#paper img:hover {
+    background-color: #18B3FC;
+    transform: scale(0.95);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#scissors {
+    background-color: white;
+    border: 0;
+}
+
+#scissors img {
+    border-radius: 8px;
+    transform: scale(1);
+    transition: 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#scissors img:hover {
+    background-color: #656565;
+    transform: scale(0.95);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
 }

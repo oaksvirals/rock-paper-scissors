@@ -32,8 +32,6 @@ getComputerChoice();
 // Playing a single round of rock, paper, scissors
 const roundCount = document.querySelector('.roundResults h2');
 const roundResults = document.querySelector('.roundResults p');
-// const playersPoints = document.querySelector('.playerScore');
-// const computersPoints = document.querySelector('.computerScore');
 
 let playerScore = 0;
 let computerScore = 0;
@@ -132,8 +130,6 @@ resetButton.addEventListener('click', () => {
     numberRound = 1;
     playerScoreString = playerScore;
     ComputerScoreString = computerScore;
-    // playersPoints.textContent = playerScoreString;
-    // computersPoints.textContent = ComputerScoreString;
     roundCount.textContent = 'Round: 0 (Play Again!)';
     roundResults.textContent = '...';
     computerSelection = getComputerChoice();
@@ -158,12 +154,8 @@ let scoreLimit = 5;
 // Announcing Winner
 function scoreKeeper() {
     if (playerScore === scoreLimit) {
-        // playersPoints.textContent = 'WINNER!';
-        // computersPoints.textContent = 'LOSER...';
         buttonArea.appendChild(resetButton);
     } else if (computerScore === scoreLimit) {
-        // playersPoints.textContent = 'LOSER...';
-        // computersPoints.textContent = 'WINNER!';
         buttonArea.appendChild(resetButton);
     };
 };
@@ -173,8 +165,6 @@ rockButton.addEventListener('click', () => {
     if (playerScore !== scoreLimit && computerScore !== scoreLimit) {
         roundCount.textContent = 'Round: ' + numberRound;
         roundResults.textContent = playRound('rock', computerSelection);
-        // playersPoints.textContent = playerScoreString;
-        // computersPoints.textContent = ComputerScoreString;
     };
         
     switch(computerScore) {
@@ -221,8 +211,6 @@ paperButton.addEventListener('click', () => {
     if (playerScore !== scoreLimit && computerScore !== scoreLimit) {
         roundCount.textContent = 'Round: ' + numberRound;
         roundResults.textContent = playRound('paper', computerSelection);
-        // playersPoints.textContent = playerScoreString;
-        // computersPoints.textContent = ComputerScoreString;
     };
         
     switch(computerScore) {
@@ -268,8 +256,6 @@ scissorsButton.addEventListener('click', () => {
     if (playerScore !== scoreLimit && computerScore !== scoreLimit) {
         roundCount.textContent = 'Round: ' + numberRound;
         roundResults.textContent = playRound('scissors', computerSelection);
-        // playersPoints.textContent = playerScoreString;
-        // computersPoints.textContent = ComputerScoreString;
     };
     
     switch(computerScore) {
