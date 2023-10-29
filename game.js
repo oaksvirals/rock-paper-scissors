@@ -48,44 +48,44 @@ function playRound(playerSelection, computerSelection) {
     function rockWin() {
         let rng = Math.random() * 10;
 
-        return (rng < 1) ? winText = 'Hit! You burn your enemy!'
-        : (rng < 2) ? winText = 'Hit! They\'re scorched!'
-        : (rng < 3) ? winText = 'Hit! Dragon Breath unleashed!'
-        : (rng < 4) ? winText = 'Hit! 4'
-        : (rng < 5) ? winText = 'Hit! 5'
-        : (rng < 6) ? winText = 'Hit! 6'
-        : (rng < 7) ? winText = 'Hit! 7'
-        : (rng < 8) ? winText = 'Hit! 8'
-        : (rng < 9) ? winText = 'Hit! 9'
-        :  winText = 'Hit! 10'
+        return (rng < 1) ? winText = 'Hit! You Burn Your Enemy!'
+        : (rng < 2) ? winText = 'Hit! They\'re Scorched!'
+        : (rng < 3) ? winText = 'Hit! Dragon Breath Unleashed!'
+        : (rng < 4) ? winText = 'Hit! You\'re on Fire!'
+        : (rng < 5) ? winText = 'Hit! Inferno Blaze Victorious!'
+        : (rng < 6) ? winText = 'Hit! Embers of Triumph Ignite!'
+        : (rng < 7) ? winText = 'Hit! Cindered Foes, Fire Prevails!'
+        : (rng < 8) ? winText = 'Hit! Pyroclastic Power Erupts!'
+        : (rng < 9) ? winText = 'Hit! Burn Bright, Burn True!'
+        :  winText = 'Hit! Ashen Wake, Flame Takes All!'
     };
     function paperWin() {
         let rng = Math.random() * 10;
 
-        return (rng < 1) ? winText = 'Hit! You burn your enemy!'
-        : (rng < 2) ? winText = 'Hit! They\'re scorched!'
-        : (rng < 3) ? winText = 'Hit! Dragon Breath unleashed!'
-        : (rng < 4) ? winText = 'Hit! 4'
-        : (rng < 5) ? winText = 'Hit! 5'
-        : (rng < 6) ? winText = 'Hit! 6'
-        : (rng < 7) ? winText = 'Hit! 7'
-        : (rng < 8) ? winText = 'Hit! 8'
-        : (rng < 9) ? winText = 'Hit! 9'
-        :  winText = 'Hit! 10'
+        return (rng < 1) ? winText = 'Splash! Tidal Force Dominates!'
+        : (rng < 2) ? winText = 'Splash! Wave of Victory Crashes Down!'
+        : (rng < 3) ? winText = 'Splash! Aqua Assault Overwhelms!'
+        : (rng < 4) ? winText = 'Splash! Flood of Triumph!'
+        : (rng < 5) ? winText = 'Splash! Surging Seas Prevail!'
+        : (rng < 6) ? winText = 'Splash! Torrential Triumph!'
+        : (rng < 7) ? winText = 'Splash! Water Surge Consumes!'
+        : (rng < 8) ? winText = 'Splash! Waters Wash Away Resistance!'
+        : (rng < 9) ? winText = 'Splash! Unstoppable Tide Rises!'
+        :  winText = 'Splash! Baptised by Magic!'
     };
     function scissorsWin() {
         let rng = Math.random() * 10;
 
-        return (rng < 1) ? winText = 'Hit! You burn your enemy!'
-        : (rng < 2) ? winText = 'Hit! They\'re scorched!'
-        : (rng < 3) ? winText = 'Hit! Dragon Breath unleashed!'
-        : (rng < 4) ? winText = 'Hit! 4'
-        : (rng < 5) ? winText = 'Hit! 5'
-        : (rng < 6) ? winText = 'Hit! 6'
-        : (rng < 7) ? winText = 'Hit! 7'
-        : (rng < 8) ? winText = 'Hit! 8'
-        : (rng < 9) ? winText = 'Hit! 9'
-        :  winText = 'Hit! 10'
+        return (rng < 1) ? winText = 'Tangled! Nature\'s Grasp Ensnares!'
+        : (rng < 2) ? winText = 'Tangled! Vines Constrict, Foe Restrained!'
+        : (rng < 3) ? winText = 'Tangled! Entangled in Earthen Bonds!'
+        : (rng < 4) ? winText = 'Tangled! Green Wrath Entwines!'
+        : (rng < 5) ? winText = 'Tangled! Leafy Lockdown Achieved!'
+        : (rng < 6) ? winText = 'Tangled! Vine Entanglement!'
+        : (rng < 7) ? winText = 'Tangled! Roots Bind, Victory Assured!'
+        : (rng < 8) ? winText = 'Tangled! Enveloped by Verdant Clutches!'
+        : (rng < 9) ? winText = 'Tangled! Thicket Thralldom Triumphs!'
+        :  winText = 'Tangled! Bramble\'s Embrace Seals Fate!'
     };
         // losses
     let loseText = '';
@@ -93,44 +93,44 @@ function playRound(playerSelection, computerSelection) {
     function rockLoss() {
         let rng = Math.random() * 10;
 
-        return (rng < 1) ? loseText = 'Hit! You burn your enemy!'
-        : (rng < 2) ? loseText = 'Hit! They\'re scorched!'
-        : (rng < 3) ? loseText = 'Hit! Dragon Breath unleashed!'
-        : (rng < 4) ? loseText = 'Hit! 4'
-        : (rng < 5) ? loseText = 'Hit! 5'
-        : (rng < 6) ? loseText = 'Hit! 6'
-        : (rng < 7) ? loseText = 'Hit! 7'
-        : (rng < 8) ? loseText = 'Hit! 8'
-        : (rng < 9) ? loseText = 'Hit! 9'
-        :  loseText = 'Hit! 10'
+        return (rng < 1) ? loseText = 'Ouch! Flame Fizzles, Foe Strikes Back!'
+        : (rng < 2) ? loseText = 'Ouch! Ember\'s Miss, Enemy\'s Hit!'
+        : (rng < 3) ? loseText = 'Ouch! Fire Fails, Pain Prevails!'
+        : (rng < 4) ? loseText = 'Ouch! Blaze Backfire, Damage Taken!'
+        : (rng < 5) ? loseText = 'Ouch! Scorch Skips, Suffer the Consequence!'
+        : (rng < 6) ? loseText = 'Ouch! Fiery Fault, Struck in Return!'
+        : (rng < 7) ? loseText = 'Ouch! Burn Missed, Brutally Bested!'
+        : (rng < 8) ? loseText = 'Ouch! Ashes to Ashes, You Fall!'
+        : (rng < 9) ? loseText = 'Ouch! Flare Flounders, Foe Retaliates!'
+        :  loseText = 'Ouch! That hurts...'
     };
     function paperLoss() {
         let rng = Math.random() * 10;
 
-        return (rng < 1) ? loseText = 'Hit! You burn your enemy!'
-        : (rng < 2) ? loseText = 'Hit! They\'re scorched!'
-        : (rng < 3) ? loseText = 'Hit! Dragon Breath unleashed!'
-        : (rng < 4) ? loseText = 'Hit! 4'
-        : (rng < 5) ? loseText = 'Hit! 5'
-        : (rng < 6) ? loseText = 'Hit! 6'
-        : (rng < 7) ? loseText = 'Hit! 7'
-        : (rng < 8) ? loseText = 'Hit! 8'
-        : (rng < 9) ? loseText = 'Hit! 9'
-        :  loseText = 'Hit! 10'
+        return (rng < 1) ? loseText = 'Soaked! Water Whiffs, Enemy Scores!'
+        : (rng < 2) ? loseText = 'Soaked! Wave Wanes, Wound Sustained!'
+        : (rng < 3) ? loseText = 'Soaked! Stream Strays, Strike Endured!'
+        : (rng < 4) ? loseText = 'Soaked! Missed Torrent, Take the Blow!'
+        : (rng < 5) ? loseText = 'Soaked! Flood Falters, Foe\'s Revenge!'
+        : (rng < 6) ? loseText = 'Soaked! Ripple Rejected, Rival Retaliates!'
+        : (rng < 7) ? loseText = 'Soaked! Aqua Aimless, Adversary Attacks!'
+        : (rng < 8) ? loseText = 'Soaked! Deluge Dodged, Damage Dealt!'
+        : (rng < 9) ? loseText = 'Soaked! Tide Turns, Enemy Strikes!'
+        :  loseText = 'Soaked! Surge Stumbles, Suffer the Blow!'
     };
     function scissorsLoss() {
         let rng = Math.random() * 10;
 
-        return (rng < 1) ? loseText = 'Hit! You burn your enemy!'
-        : (rng < 2) ? loseText = 'Hit! They\'re scorched!'
-        : (rng < 3) ? loseText = 'Hit! Dragon Breath unleashed!'
-        : (rng < 4) ? loseText = 'Hit! 4'
-        : (rng < 5) ? loseText = 'Hit! 5'
-        : (rng < 6) ? loseText = 'Hit! 6'
-        : (rng < 7) ? loseText = 'Hit! 7'
-        : (rng < 8) ? loseText = 'Hit! 8'
-        : (rng < 9) ? loseText = 'Hit! 9'
-        :  loseText = 'Hit! 10'
+        return (rng < 1) ? loseText = 'Stung! Vines Veer, Victim to Vengeance!'
+        : (rng < 2) ? loseText = 'Stung! Foliage Fails, Foe Flourishes!'
+        : (rng < 3) ? loseText = 'Stung! Entangle Error, Enemy Exploits!'
+        : (rng < 4) ? loseText = 'Stung! Botanical Blunder, Battered in Return!'
+        : (rng < 5) ? loseText = 'Stung! Greenery Gaffe, Gets Grappled!'
+        : (rng < 6) ? loseText = 'Stung! Thicket Thrashed, Thrown into Turmoil!'
+        : (rng < 7) ? loseText = 'Stung! Nature\'s Net Misses, Nemesis Strikes!'
+        : (rng < 8) ? loseText = 'Stung! Leafy Lapse, Lashed by Foe!'
+        : (rng < 9) ? loseText = 'Stung! Sprout Slip, Stricken by Adversary!"'
+        :  loseText = 'Stung! Herbal Halt, Hit Hard by Rival!'
     };
         // ties
     let tieText = '';
@@ -138,16 +138,16 @@ function playRound(playerSelection, computerSelection) {
     function tie() {
         let rng = Math.random() * 10;
 
-        return (rng < 1) ? tieText = 'Hit! You burn your enemy!'
-        : (rng < 2) ? tieText = 'Hit! They\'re scorched!'
-        : (rng < 3) ? tieText = 'Hit! Dragon Breath unleashed!'
-        : (rng < 4) ? tieText = 'Hit! 4'
-        : (rng < 5) ? tieText = 'Hit! 5'
-        : (rng < 6) ? tieText = 'Hit! 6'
-        : (rng < 7) ? tieText = 'Hit! 7'
-        : (rng < 8) ? tieText = 'Hit! 8'
-        : (rng < 9) ? tieText = 'Hit! 9'
-        :  tieText = 'Hit! 10'
+        return (rng < 1) ? tieText = 'Tie! Mirror Move, Standoff Stands!'
+        : (rng < 2) ? tieText = 'Tie! Equal Forces, Stalemate Strikes!'
+        : (rng < 3) ? tieText = 'Tie! Clashing Copies, No Victor!'
+        : (rng < 4) ? tieText = 'Tie! Identical Incantations, Impasse Ensues!'
+        : (rng < 5) ? tieText = 'Tie! Dual Dance, Draw Declared!'
+        : (rng < 6) ? tieText = 'Tie! Twin Tactics, Tie Taken!'
+        : (rng < 7) ? tieText = 'Tie! Parallel Powers, Pointless Plight!'
+        : (rng < 8) ? tieText = 'Tie! Same Spells, Stasis Secured!'
+        : (rng < 9) ? tieText = 'Tie! Matching Magic, Muted Might!'
+        :  tieText = 'Tie! Copycat Clash, Concluded in Tie!'
     };
 
     // player has rock
