@@ -18,19 +18,17 @@ body {
 
 /* Game Details: Above the Fold */
 .gameDetails {
-    border: 2px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 25px;
-    padding: 25px;
-    /* margin-top: 25px;
-    margin-bottom: 25px; */
+    padding-top: 50px;
 }
 
 .gameDetails h1 {
     font-size: 50px;
+    color: #FF8000;
 }
 
 .gameDetails p {
@@ -39,17 +37,15 @@ body {
 
 /* Game Area */
 .gameBG {
-    border: 2px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding-bottom: 50px;
 }
 
 .arenaBG {
-    border: 2px solid red;
     position: relative;
-    padding: 25px;
+    /* padding: 25px; */
 }
 
 .msgBox {
@@ -71,20 +67,37 @@ body {
     right: 30px;
 }
 
+/* Msg Box */
+.msgBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 /* Character HP */
 .lifeContainer {
-    border: 2px solid green;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
-    width: 50%;
+    font-size: 12px;
+    margin-top: -40px;
+    width: 750px;
 }
 
 .lifeHearts {
     display: flex;
     justify-content: space-between;
-    gap: 375px;
+    gap: 300px;
+}
+
+/* Button Area */
+.buttonArea {
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+    margin-top: 20px;
 }
 
 /* Ability Buttons */
