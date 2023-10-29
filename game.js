@@ -34,6 +34,10 @@ const roundCount = document.querySelector('.msgBox h4');
 const roundResults = document.querySelector('.msgBox p');
 const wizLeft = document.querySelector('.wizLeft');
 const wizRight = document.querySelector('.wizRight');
+
+    // Wizard Spell Images
+const wizLeftSpellLocation = document.querySelector('.wizLeftSpell');
+const wizRightSpellLocation = document.querySelector('.wizRightSpell');
 const wizLeftSpell = document.createElement('img');
 const wizRightSpell = document.createElement('img');
 
@@ -149,11 +153,11 @@ function playRound(playerSelection, computerSelection) {
         : (rng < 3) ? loseText = 'Stung! Entangle Error, Enemy Exploits!'
         : (rng < 4) ? loseText = 'Stung! Vines Blunder, Battered in Return!'
         : (rng < 5) ? loseText = 'Stung! Greenery Gaffe, Gets Grappled!'
-        : (rng < 6) ? loseText = 'Stung! Thicket Down, Thrown into Turmoil!'
-        : (rng < 7) ? loseText = 'Stung! Nature\'s Net Misses, Nemesis Strikes!'
+        : (rng < 6) ? loseText = 'Stung! Thicket Down, Thrown in Turmoil!'
+        : (rng < 7) ? loseText = 'Stung! Nature Misses, Nemesis Strikes!'
         : (rng < 8) ? loseText = 'Stung! Leafy Lapse, Lashed by Foe!'
-        : (rng < 9) ? loseText = 'Stung! Sprout Slip, Stricken by Adversary!"'
-        :  loseText = 'Stung! Herbal Halt, Hit Hard by Rival!'
+        : (rng < 9) ? loseText = 'Stung! Sprout Slip, Stricken!"'
+        :  loseText = 'Stung! Herbal Halt, Hit by Rival!'
     };
         // ties
     let tieText = '';
@@ -164,7 +168,7 @@ function playRound(playerSelection, computerSelection) {
         return (rng < 1) ? tieText = 'Tie! Mirror Move, Standoff Stands!'
         : (rng < 2) ? tieText = 'Tie! Equal Forces, Stalemate Strikes!'
         : (rng < 3) ? tieText = 'Tie! Clashing Copies, No Victor!'
-        : (rng < 4) ? tieText = 'Tie! Identical Incantations, Impasse Ensues!'
+        : (rng < 4) ? tieText = 'Tie! Identical Magic, Impasse Ensues!'
         : (rng < 5) ? tieText = 'Tie! Dual Dance, Draw Declared!'
         : (rng < 6) ? tieText = 'Tie! Twin Tactics, Tie Taken!'
         : (rng < 7) ? tieText = 'Tie! Parallel Powers, Pointless Plight!'
@@ -177,15 +181,24 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore++;
         numberRound++;
+        wizRightSpellLocation.appendChild(wizRightSpell);
+        wizRightSpell.width = '150';
+        wizRightSpell.src = './images/vine.png';
         rockWin()
         return winText;
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore++;
         numberRound++;
+        wizRightSpellLocation.appendChild(wizRightSpell);
+        wizRightSpell.width = '150';
+        wizRightSpell.src = './images/wave-left.png';
         rockLoss();
         return loseText;
     } else if (playerSelection === 'rock' && computerSelection === 'rock') {
         numberRound++;
+        wizRightSpellLocation.appendChild(wizRightSpell);
+        wizRightSpell.width = '150';
+        wizRightSpell.src = './images/fireball-left.png';
         tie();
         return tieText;
     }
@@ -194,15 +207,24 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore++;
         numberRound++;
+        wizRightSpellLocation.appendChild(wizRightSpell);
+        wizRightSpell.width = '150';
+        wizRightSpell.src = './images/fireball-left.png';
         paperWin();
         return winText;
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         computerScore++;
         numberRound++;
+        wizRightSpellLocation.appendChild(wizRightSpell);
+        wizRightSpell.width = '150';
+        wizRightSpell.src = './images/vine.png';
         paperLoss();
         return loseText;
     } else if (playerSelection ==='paper' && computerSelection === 'paper') {
         numberRound++;
+        wizRightSpellLocation.appendChild(wizRightSpell);
+        wizRightSpell.width = '150';
+        wizRightSpell.src = './images/wave-left.png';
         tie();
         return tieText;
     }
@@ -211,15 +233,24 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore++;
         numberRound++;
+        wizRightSpellLocation.appendChild(wizRightSpell);
+        wizRightSpell.width = '150';
+        wizRightSpell.src = './images/wave-left.png';
         scissorsWin();
         return winText;
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         computerScore++;
         numberRound++;
+        wizRightSpellLocation.appendChild(wizRightSpell);
+        wizRightSpell.width = '150';
+        wizRightSpell.src = './images/fireball-left.png';
         scissorsLoss();
         return loseText;
     } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
         numberRound++;
+        wizRightSpellLocation.appendChild(wizRightSpell);
+        wizRightSpell.width = '150';
+        wizRightSpell.src = './images/vine.png';
         tie();
         return tieText;
     }
@@ -274,6 +305,11 @@ resetButton.addEventListener('click', () => {
     showHeart(enemyHeart4);
     showHeart(enemyHeart5);
 
+    wizLeftSpell.src = '';
+    wizRightSpell.src = '';
+    wizLeft.src = './images/left-wiz-one.png';
+    wizRight.src = './images/right-wiz-one.png';
+
     resetButton.remove();
 });
 
@@ -296,6 +332,9 @@ rockButton.addEventListener('click', () => {
     if (playerScore !== scoreLimit && computerScore !== scoreLimit) {
         roundCount.textContent = 'Round: ' + numberRound;
         roundResults.textContent = playRound('rock', computerSelection);
+        wizLeftSpellLocation.appendChild(wizLeftSpell);
+        wizLeftSpell.width = '150';
+        wizLeftSpell.src = "./images/fireball-right.png";
     };
         
     switch(computerScore) {
@@ -342,6 +381,9 @@ paperButton.addEventListener('click', () => {
     if (playerScore !== scoreLimit && computerScore !== scoreLimit) {
         roundCount.textContent = 'Round: ' + numberRound;
         roundResults.textContent = playRound('paper', computerSelection);
+        wizLeftSpellLocation.appendChild(wizLeftSpell);
+        wizLeftSpell.width = '150';
+        wizLeftSpell.src = "./images/wave-right.png";
     };
         
     switch(computerScore) {
@@ -387,6 +429,9 @@ scissorsButton.addEventListener('click', () => {
     if (playerScore !== scoreLimit && computerScore !== scoreLimit) {
         roundCount.textContent = 'Round: ' + numberRound;
         roundResults.textContent = playRound('scissors', computerSelection);
+        wizLeftSpellLocation.appendChild(wizLeftSpell);
+        wizLeftSpell.width = '150';
+        wizLeftSpell.src = "./images/vine.png";
     };
     
     switch(computerScore) {

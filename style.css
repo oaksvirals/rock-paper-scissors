@@ -50,7 +50,7 @@ body {
 
 #resetBox {
     position: absolute;
-    left: 175px;
+    left: 180px;
     bottom: 350px;
     padding: 25px;
     padding-left: 50px;
@@ -80,6 +80,7 @@ body {
     background-color: black;
     color: white;
     padding: 25px;
+    min-width: 750px;
 }
 
 .wizLeft {
@@ -88,11 +89,10 @@ body {
 }
 
 .wizLeftSpell {
-    border: 2px solid red;
     position: absolute;
     padding: 25px;
-    left: 200px;
-    bottom: 275px;
+    left: 150px;
+    bottom: 200px;
 }
 
 .wizRight {
@@ -102,11 +102,10 @@ body {
 }
 
 .wizRightSpell {
-    border: 2px solid red;
     position: absolute;
     padding: 25px;
-    right: 250px;
-    bottom: 275px;
+    right: 200px;
+    bottom: 200px;
 }
 
 /* Msg Box */
