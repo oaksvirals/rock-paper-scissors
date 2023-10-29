@@ -40,47 +40,165 @@ let numberRound = 1;
 function playRound(playerSelection, computerSelection) {
 
     getComputerChoice();
-    
+
+    // Win and Loss Phrases
+        // wins
+    let winText = '';
+
+    function rockWin() {
+        let rng = Math.random() * 10;
+
+        return (rng < 1) ? winText = 'Hit! You burn your enemy!'
+        : (rng < 2) ? winText = 'Hit! They\'re scorched!'
+        : (rng < 3) ? winText = 'Hit! Dragon Breath unleashed!'
+        : (rng < 4) ? winText = 'Hit! 4'
+        : (rng < 5) ? winText = 'Hit! 5'
+        : (rng < 6) ? winText = 'Hit! 6'
+        : (rng < 7) ? winText = 'Hit! 7'
+        : (rng < 8) ? winText = 'Hit! 8'
+        : (rng < 9) ? winText = 'Hit! 9'
+        :  winText = 'Hit! 10'
+    };
+    function paperWin() {
+        let rng = Math.random() * 10;
+
+        return (rng < 1) ? winText = 'Hit! You burn your enemy!'
+        : (rng < 2) ? winText = 'Hit! They\'re scorched!'
+        : (rng < 3) ? winText = 'Hit! Dragon Breath unleashed!'
+        : (rng < 4) ? winText = 'Hit! 4'
+        : (rng < 5) ? winText = 'Hit! 5'
+        : (rng < 6) ? winText = 'Hit! 6'
+        : (rng < 7) ? winText = 'Hit! 7'
+        : (rng < 8) ? winText = 'Hit! 8'
+        : (rng < 9) ? winText = 'Hit! 9'
+        :  winText = 'Hit! 10'
+    };
+    function scissorsWin() {
+        let rng = Math.random() * 10;
+
+        return (rng < 1) ? winText = 'Hit! You burn your enemy!'
+        : (rng < 2) ? winText = 'Hit! They\'re scorched!'
+        : (rng < 3) ? winText = 'Hit! Dragon Breath unleashed!'
+        : (rng < 4) ? winText = 'Hit! 4'
+        : (rng < 5) ? winText = 'Hit! 5'
+        : (rng < 6) ? winText = 'Hit! 6'
+        : (rng < 7) ? winText = 'Hit! 7'
+        : (rng < 8) ? winText = 'Hit! 8'
+        : (rng < 9) ? winText = 'Hit! 9'
+        :  winText = 'Hit! 10'
+    };
+        // losses
+    let loseText = '';
+
+    function rockLoss() {
+        let rng = Math.random() * 10;
+
+        return (rng < 1) ? loseText = 'Hit! You burn your enemy!'
+        : (rng < 2) ? loseText = 'Hit! They\'re scorched!'
+        : (rng < 3) ? loseText = 'Hit! Dragon Breath unleashed!'
+        : (rng < 4) ? loseText = 'Hit! 4'
+        : (rng < 5) ? loseText = 'Hit! 5'
+        : (rng < 6) ? loseText = 'Hit! 6'
+        : (rng < 7) ? loseText = 'Hit! 7'
+        : (rng < 8) ? loseText = 'Hit! 8'
+        : (rng < 9) ? loseText = 'Hit! 9'
+        :  loseText = 'Hit! 10'
+    };
+    function paperLoss() {
+        let rng = Math.random() * 10;
+
+        return (rng < 1) ? loseText = 'Hit! You burn your enemy!'
+        : (rng < 2) ? loseText = 'Hit! They\'re scorched!'
+        : (rng < 3) ? loseText = 'Hit! Dragon Breath unleashed!'
+        : (rng < 4) ? loseText = 'Hit! 4'
+        : (rng < 5) ? loseText = 'Hit! 5'
+        : (rng < 6) ? loseText = 'Hit! 6'
+        : (rng < 7) ? loseText = 'Hit! 7'
+        : (rng < 8) ? loseText = 'Hit! 8'
+        : (rng < 9) ? loseText = 'Hit! 9'
+        :  loseText = 'Hit! 10'
+    };
+    function scissorsLoss() {
+        let rng = Math.random() * 10;
+
+        return (rng < 1) ? loseText = 'Hit! You burn your enemy!'
+        : (rng < 2) ? loseText = 'Hit! They\'re scorched!'
+        : (rng < 3) ? loseText = 'Hit! Dragon Breath unleashed!'
+        : (rng < 4) ? loseText = 'Hit! 4'
+        : (rng < 5) ? loseText = 'Hit! 5'
+        : (rng < 6) ? loseText = 'Hit! 6'
+        : (rng < 7) ? loseText = 'Hit! 7'
+        : (rng < 8) ? loseText = 'Hit! 8'
+        : (rng < 9) ? loseText = 'Hit! 9'
+        :  loseText = 'Hit! 10'
+    };
+        // ties
+    let tieText = '';
+
+    function tie() {
+        let rng = Math.random() * 10;
+
+        return (rng < 1) ? tieText = 'Hit! You burn your enemy!'
+        : (rng < 2) ? tieText = 'Hit! They\'re scorched!'
+        : (rng < 3) ? tieText = 'Hit! Dragon Breath unleashed!'
+        : (rng < 4) ? tieText = 'Hit! 4'
+        : (rng < 5) ? tieText = 'Hit! 5'
+        : (rng < 6) ? tieText = 'Hit! 6'
+        : (rng < 7) ? tieText = 'Hit! 7'
+        : (rng < 8) ? tieText = 'Hit! 8'
+        : (rng < 9) ? tieText = 'Hit! 9'
+        :  tieText = 'Hit! 10'
+    };
+
     // player has rock
     if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore++;
         numberRound++;
-        return 'You Win! Rock beats Scissors.';
+        rockWin()
+        return winText;
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore++;
         numberRound++;
-        return 'You Lose! Paper beats Rock.';
+        rockLoss();
+        return loseText;
     } else if (playerSelection === 'rock' && computerSelection === 'rock') {
         numberRound++;
-        return 'Tie! Try again.';
+        tie();
+        return tieText;
     }
 
     // player has paper
     if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore++;
         numberRound++;
-        return 'You Win! Paper beats Rock.';
+        paperWin();
+        return winText;
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         computerScore++;
         numberRound++;
-        return 'You Lose! Scissors beats Paper.';
+        paperLoss();
+        return loseText;
     } else if (playerSelection ==='paper' && computerSelection === 'paper') {
         numberRound++;
-        return 'Tie! Try again.';
+        tie();
+        return tieText;
     }
 
     // player has scissors
     if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore++;
         numberRound++;
-        return 'You Win! Scissors beats Paper.';
+        scissorsWin();
+        return winText;
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         computerScore++;
         numberRound++;
-        return 'You Lose! Rock beats Scissors.';
+        scissorsLoss();
+        return loseText;
     } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
         numberRound++;
-        return 'Tie! Try again.';
+        tie();
+        return tieText;
     }
 
 };
