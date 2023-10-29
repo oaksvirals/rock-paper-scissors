@@ -1,4 +1,4 @@
-# rock-paper-scissors
+# wizard-battles
 
 This is a wizardy twist on the classic game of rock, paper, scissors.
 
