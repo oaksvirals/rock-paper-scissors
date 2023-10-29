@@ -96,6 +96,27 @@ function playRound(playerSelection, computerSelection) {
 
 };
 
+// Hearts
+const playerHeart5 = document.querySelector('#playerHeart5');
+const playerHeart4 = document.querySelector('#playerHeart4');
+const playerHeart3 = document.querySelector('#playerHeart3');
+const playerHeart2 = document.querySelector('#playerHeart2');
+const playerHeart1 = document.querySelector('#playerHeart1');
+const enemyHeart5 = document.querySelector('#enemyHeart5');
+const enemyHeart4 = document.querySelector('#enemyHeart4');
+const enemyHeart3 = document.querySelector('#enemyHeart3');
+const enemyHeart2 = document.querySelector('#enemyHeart2');
+const enemyHeart1 = document.querySelector('#enemyHeart1');
+
+    // hiding hearts
+function hideHeart(heart) {
+    heart.style.visibility = 'hidden';
+};
+    // showing hearts
+function showHeart(heart) {
+    heart.style.visibility = 'visible';
+};
+
 // Action Buttons
 const buttonArea = document.querySelector('.buttonArea');
 const rockButton = document.querySelector('#rock');
@@ -116,6 +137,18 @@ resetButton.addEventListener('click', () => {
     roundCount.textContent = 'Round: 0 (Play Again!)';
     roundResults.textContent = '...';
     computerSelection = getComputerChoice();
+
+    showHeart(playerHeart1);
+    showHeart(playerHeart2);
+    showHeart(playerHeart3);
+    showHeart(playerHeart4);
+    showHeart(playerHeart5);
+    showHeart(enemyHeart1);
+    showHeart(enemyHeart2);
+    showHeart(enemyHeart3);
+    showHeart(enemyHeart4);
+    showHeart(enemyHeart5);
+
     resetButton.remove();
 });
 
@@ -144,9 +177,44 @@ rockButton.addEventListener('click', () => {
         computersPoints.textContent = ComputerScoreString;
     };
         
-    if (playerScore + computerScore >= scoreLimit) {
+    switch(computerScore) {
+        case 1:
+            hideHeart(playerHeart5);
+            break;
+        case 2:
+            hideHeart(playerHeart4);
+            break;
+        case 3:
+            hideHeart(playerHeart3);
+            break;
+        case 4:
+            hideHeart(playerHeart2);
+            break;
+        case 5:
+            hideHeart(playerHeart1);
             scoreKeeper();
+            break;
     };
+
+    switch(playerScore) {
+        case 1:
+            hideHeart(enemyHeart1);
+            break;
+        case 2:
+            hideHeart(enemyHeart2);
+            break;
+        case 3:
+            hideHeart(enemyHeart3);
+            break;
+        case 4:
+            hideHeart(enemyHeart4);
+            break;
+        case 5:
+            hideHeart(enemyHeart5);
+            scoreKeeper();
+            break;
+    };
+
 });
 
 paperButton.addEventListener('click', () => {
@@ -155,11 +223,45 @@ paperButton.addEventListener('click', () => {
         roundResults.textContent = playRound('paper', computerSelection);
         playersPoints.textContent = playerScoreString;
         computersPoints.textContent = ComputerScoreString;
-        };
+    };
         
-    if (playerScore + computerScore >= scoreLimit) {
+    switch(computerScore) {
+        case 1:
+            hideHeart(playerHeart5);
+            break;
+        case 2:
+            hideHeart(playerHeart4);
+            break;
+        case 3:
+            hideHeart(playerHeart3);
+            break;
+        case 4:
+            hideHeart(playerHeart2);
+            break;
+        case 5:
+            hideHeart(playerHeart1);
             scoreKeeper();
-        };
+            break;
+    };
+
+    switch(playerScore) {
+        case 1:
+            hideHeart(enemyHeart1);
+            break;
+        case 2:
+            hideHeart(enemyHeart2);
+            break;
+        case 3:
+            hideHeart(enemyHeart3);
+            break;
+        case 4:
+            hideHeart(enemyHeart4);
+            break;
+        case 5:
+            hideHeart(enemyHeart5);
+            scoreKeeper();
+            break;
+    };
 });
 
 scissorsButton.addEventListener('click', () => {
@@ -170,7 +272,41 @@ scissorsButton.addEventListener('click', () => {
         computersPoints.textContent = ComputerScoreString;
     };
     
-    if (playerScore + computerScore >= scoreLimit) {
-        scoreKeeper();
+    switch(computerScore) {
+        case 1:
+            hideHeart(playerHeart5);
+            break;
+        case 2:
+            hideHeart(playerHeart4);
+            break;
+        case 3:
+            hideHeart(playerHeart3);
+            break;
+        case 4:
+            hideHeart(playerHeart2);
+            break;
+        case 5:
+            hideHeart(playerHeart1);
+            scoreKeeper();
+            break;
+    };
+
+    switch(playerScore) {
+        case 1:
+            hideHeart(enemyHeart1);
+            break;
+        case 2:
+            hideHeart(enemyHeart2);
+            break;
+        case 3:
+            hideHeart(enemyHeart3);
+            break;
+        case 4:
+            hideHeart(enemyHeart4);
+            break;
+        case 5:
+            hideHeart(enemyHeart5);
+            scoreKeeper();
+            break;
     };
 });
